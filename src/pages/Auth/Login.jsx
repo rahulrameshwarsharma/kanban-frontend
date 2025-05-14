@@ -54,6 +54,10 @@ const Login = () => {
 
         <button type="submit">Login</button>
 
+         <button type="button" onClick={() => navigate("/signup")}>
+          Signup
+        </button>
+
         {error && <p className="auth-error">{error}</p>}
       </form>
     </div>

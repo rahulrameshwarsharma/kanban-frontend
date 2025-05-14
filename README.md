@@ -41,7 +41,7 @@ Build a responsive and intuitive frontend interface for a Kanban board that incl
 
 *Frontend Deployed on Netlify*  
 
-[https://your-kanban.netlify.app](https://your-kanban.netlify.app)
+[https://kanban-frontend-pixel.netlify.app/](https://kanban-frontend-pixel.netlify.app/)
 
 ## Backend API
 

@@ -1,18 +1,17 @@
-
-import React, { useState } from 'react';
-import axios from '../../api/axios';
-import { useNavigate } from 'react-router-dom';
-import './Auth.css';
+import React, { useState } from "react";
+import axios from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import "./Auth.css";
 
 const Signup = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    password: ''
+    name: "",
+    email: "",
+    password: "",
   });
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,14 +19,14 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     try {
-      const res = await axios.post('/auth/signup', form);
-      localStorage.setItem('token', res.data.token); // Save JWT
-      navigate('/board');
+      const res = await axios.post("/auth/signup", form);
+      localStorage.setItem("token", res.data.token); // Save JWT
+      navigate("/board");
     } catch (err) {
-      setError(err.response?.data?.message || 'Signup failed');
+      setError(err.response?.data?.message || "Signup failed");
     }
   };
 
@@ -64,6 +63,10 @@ const Signup = () => {
         />
 
         <button type="submit">Create Account</button>
+
+        <button type="button" onClick={() => navigate("/login")}>
+          Login
+        </button>
 
         {error && <p className="auth-error">{error}</p>}
       </form>
